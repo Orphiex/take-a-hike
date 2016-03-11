@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def authenticate_current_user
-    render json: {message: "Unauthorize"} if get_current_user.nil?
+    render json: {message: "Unauthorized"} if get_current_user=nil?
   end
 
   def get_current_user
