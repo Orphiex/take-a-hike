@@ -12,12 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
-
 //= require jquery-deparam/jquery-deparam.js
 //= require jquery-cookie/jquery.cookie.js
 //= require pubsub-js/src/pubsub.js
 //= require j-toker/dist/jquery.j-toker.js
+//= require bootstrap/dist/js/bootstrap.js
+//= require_tree .
 
 $.auth.configure({
   // By default, you only need to configure apiUrl
