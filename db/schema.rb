@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160310063659) do
+ActiveRecord::Schema.define(version: 20160311021143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,5 +40,33 @@ ActiveRecord::Schema.define(version: 20160310063659) do
   add_index "hikers", ["email"], name: "index_hikers_on_email", using: :btree
   add_index "hikers", ["reset_password_token"], name: "index_hikers_on_reset_password_token", unique: true, using: :btree
   add_index "hikers", ["uid", "provider"], name: "index_hikers_on_uid_and_provider", unique: true, using: :btree
+
+  create_table "hikes", force: :cascade do |t|
+    t.string   "hike_name"
+    t.date     "date"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.text     "meet_instructions"
+    t.string   "start_point"
+    t.string   "end_point"
+    t.float    "hike_distance"
+    t.time     "hike_time"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  create_table "trails", force: :cascade do |t|
+    t.string   "trail_name"
+    t.string   "region"
+    t.text     "descriptions"
+    t.string   "point_1"
+    t.text     "start_1"
+    t.string   "point_2"
+    t.text     "start_2"
+    t.float    "max_height"
+    t.float    "difficulty"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
 end
