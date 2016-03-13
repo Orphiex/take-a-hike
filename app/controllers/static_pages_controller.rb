@@ -1,6 +1,10 @@
 class StaticPagesController < ApplicationController
-  before_action :authenticate_current_user!, except: [:index]
+  def signin
+  end
 
-  def index
+  def signup
+  end
+
+  def create
   end
 end

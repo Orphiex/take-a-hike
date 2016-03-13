@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160311021143) do
+ActiveRecord::Schema.define(version: 20160313063505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "groups", force: :cascade do |t|
+    t.integer  "hiker_id"
+    t.integer  "hike_id"
+    t.string   "group_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "groups", ["hike_id"], name: "index_groups_on_hike_id", using: :btree
+  add_index "groups", ["hiker_id"], name: "index_groups_on_hiker_id", using: :btree
 
   create_table "hikers", force: :cascade do |t|
     t.string   "provider",               default: "email", null: false
@@ -54,6 +65,14 @@ ActiveRecord::Schema.define(version: 20160311021143) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
+
+  create_table "hikes_trails", force: :cascade do |t|
+    t.integer "hike_id"
+    t.integer "trail_id"
+  end
+
+  add_index "hikes_trails", ["hike_id"], name: "index_hikes_trails_on_hike_id", using: :btree
+  add_index "hikes_trails", ["trail_id"], name: "index_hikes_trails_on_trail_id", using: :btree
 
   create_table "trails", force: :cascade do |t|
     t.string   "trail_name"

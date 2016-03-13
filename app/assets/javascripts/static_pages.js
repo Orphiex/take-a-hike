@@ -13,7 +13,7 @@ $(document).ready(function(){
       password_confirmation: $('#signup-form input[name="password_confirmation"]').val()
     }).then(function(user){
       console.log(user);
-      alert("Welcome "+ user.name + "!");
+      window.location.href = '/home';
     }).fail(function(resp){
       console.log(resp);
     });
@@ -27,9 +27,13 @@ $(document).ready(function(){
       password: $('#signin-form input[name="password"]').val(),
     }).then(function(user){
       console.log(user);
-      alert('Welcome ' + user.name + '!');
+      window.location.href = '/';
     }).fail(function(resp){
       console.log(resp);
     });
+  });
+
+  $('#logout-button').on('click', function(){
+    $.auth.signOut();
   });
 });
