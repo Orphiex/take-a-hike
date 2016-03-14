@@ -1,0 +1,53 @@
+<%= form_for @hike do |f| %>
+  <% if @hike.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hike.errors.count, "error") %> prohibited this hike from being saved:</h2>
+
+      <ul>
+      <% @hike.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :hike_name %> <br>
+    <%= f.text_field :hike_name %>
+  </div>
+  <div>
+    <div class="field">
+      <%= f.label :date %> <br>
+      <%= f.text_field :date, :placeholder => "yyyy/mm/dd" %>
+    </div>
+    <div class="field">
+      <%= f.label :start_time %> <br>
+      <%= f.text_field :start_time %>
+    </div>
+    <div class="field">
+      <%= f.label :meet_instructions %> <br>
+      <%= f.text_area :meet_instructions, :placeholder => "Where will your group meet?" %>
+    </div>
+  </div>
+  <div>
+    <div class="field">
+      <%= f.label :start_point %> <br>
+      <%= f.text_field :start_point, :placeholder => "Placeholder" %>
+    </div>
+    <div class="field">
+      <%= f.label :end_point %> <br>
+      <%= f.text_field :end_point, :placeholder => "Placeholder" %>
+    </div>
+    <div class="field">
+      <%= f.label :hike_distance %> <br>
+      <%= f.text_field :hike_distance, :placeholder => "0" %> <%= f.label " km" %>
+    </div>
+    <div class="field">
+      <%= f.label :hike_time %> <br>
+      <%= f.text_field :hike_time, :placeholder => "0" %> <%= f.label " hrs" %>
+    </div>
+  </div> <br>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

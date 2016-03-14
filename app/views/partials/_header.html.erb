@@ -13,8 +13,12 @@
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="/trails">Explore a Trail</a></li>
-        <li><a href="/hike">Plan a Hike</a></li>
+        <li><a href="/regions">Explore a Trail</a></li>
+        <% if @current_user %>
+          <li><a href="/hikes/new">Plan a Hike</a></li>
+        <% else %>
+          <li><a href="/signin">Plan a Hike</a></li>
+        <% end %>
         <li><a href="/search">Search</a></li>
       </ul>
       <!-- Collect the nav links, forms, and other content for toggling -->

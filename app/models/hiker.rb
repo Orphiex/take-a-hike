@@ -5,6 +5,6 @@ class Hiker < ActiveRecord::Base
           :omniauthable
   include DeviseTokenAuth::Concerns::User
 
-  has_many :hikes
+  has_many :groups
   has_many :hikes, through: :groups
 end
