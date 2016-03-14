@@ -29,6 +29,9 @@ class HikesController < ApplicationController
   def edit
   end
 
+  def region_trails
+  end
+
   def update
     @hike = Hike.find_by_id(params[:id])
 

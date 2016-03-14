@@ -6,27 +6,11 @@ before_action :authenticate_current_user!, except: [:index, :show]
     @trails = Trail.where(region_params) # => {region: "Island"}
   end
 
-  def new
-  end
-
   def show
-    @trail = Trail.find_by_id(params[:id])
+    @trail = Trail.find_by(params[:trail_name])
 
     if @trail.nil?
       render json: { message: "Cannot find trail" }, status: :not_found
-    end
-  end
-
-  def edit
-  end
-
-  def update
-    @trail = Trail.find_by_id(params[:id])
-
-    if @trail.nil?
-      render json: { message: "Cannot find trail" }, status: :not_found
-    else
-      @trail.update(trail_params)
     end
   end
 
@@ -50,7 +34,7 @@ before_action :authenticate_current_user!, except: [:index, :show]
   end
 
   def trail_params
-    params.require(:trail).permit(:denis) # => {denis: "asdfasd"}
+    params.require(:trail).permit(:trail_name, :region, :descriptions, :pt1_name, :pt1_info, :pt2_name, :pt2_info, :max_height, :difficulty, :pt1_transp, :pt2_transp, :pt1_photo, :pt2_photo, :map_link, :distance, :est_time) # => {denis: "asdfasd"}
   end
 
 end

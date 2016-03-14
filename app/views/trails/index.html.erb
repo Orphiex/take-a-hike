@@ -11,13 +11,12 @@
     <h1>Which trail would you like to hike?</h1>
     <div id="trail-links">
       <% @trails.each do |trail| %>
-        <a href="/trails/<%= trail.id %>">
+        <a href="/trails/<%= trail.trail_name %>">
           <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
             <%= image_tag(trail.map_link, :alt => "icon") %><h4><%= trail.trail_name %></h4>
           </div>
         </a>
       <% end %>
-
     </div>
   </div>
 </div>
