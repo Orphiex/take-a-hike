@@ -39,10 +39,12 @@ before_action :authenticate_current_user!, except: [:index, :show]
     end
   end
 
+
   private
 
   def post_params
     params.require(:trail).permit()
   end
+
 end
 

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get '/regions', to: 'trails#regions'
 
+  get '/trails', to: 'trails#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
