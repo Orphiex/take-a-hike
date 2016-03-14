@@ -7,8 +7,8 @@ before_action :authenticate_current_user!, except: [:index, :show]
   end
 
   def details
-    @id = params[:id]
-    @trail = Trail.find(id: @id)
+    # @id = params[:id]
+    @trail = Trail.find_by_id(params[:id])
   end
 
   def new

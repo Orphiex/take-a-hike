@@ -30,3 +30,24 @@
     }
   }
 }
+
+#trail {
+    .well {
+      background-color: lightblue;
+    }
+
+
+  .trail-details > div.item-wrapper {
+    max-height: 500px;
+    border: 3px grey;
+    border-radius: 5px;
+    padding: 5px 5px 0px 5px;
+    object-fit: cover;
+
+    div.trail-image-div {
+      img {
+        height: 500px;
+      }
+    }
+  }
+}

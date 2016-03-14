@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   get '/trails', to: 'trails#index'
 
-  get '/trails/id', to: 'trails#details'
+  get '/trails/:id', to: 'trails#details'
 
   resources :hikes, only: [:new, :create, :update]
 
