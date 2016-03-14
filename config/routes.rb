@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/signin', to: 'static_pages#signin'
   get '/signup', to: 'static_pages#signup'
 
+  get '/regions', to: 'trails#regions'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

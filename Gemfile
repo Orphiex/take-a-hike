@@ -31,6 +31,11 @@ gem 'bower'
   gem 'devise_token_auth'
   gem 'omniauth'
 
+  gem 'aws-sdk-v1'
+  gem 'aws-sdk', '~> 2'
+
+
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -40,6 +45,7 @@ gem 'bower'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'dotenv-rails'
 end
 
 group :development do
