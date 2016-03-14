@@ -13,7 +13,7 @@ $(document).ready(function(){
       password_confirmation: $('#signup-form input[name="password_confirmation"]').val()
     }).then(function(user){
       console.log(user);
-      window.location.href = '/home';
+      window.location.href = '/';
     }).fail(function(resp){
       console.log(resp);
     });
