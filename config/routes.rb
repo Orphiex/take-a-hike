@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get '/regions', to: 'trails#regions'
 
+  get '/trails', to: 'trails#index'
+
   resources :hikes, only: [:new, :create, :update]
 
   # The priority is based upon order of creation: first created -> highest priority.

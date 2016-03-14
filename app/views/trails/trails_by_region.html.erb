@@ -1,0 +1,32 @@
+
+<div class="container-fluid">
+  <div class="jumbotron">
+      <h1><%= Trail.region %> Trail Details</h1>
+      <p>All the trails in this region</p>
+  </div>
+</div>
+
+<div id="trails">
+  <div class="well">
+    <h1>Which trail would you like to hike?</h1>
+    <div id="trail-links">
+
+      <a href=""><div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <%= image_tag(Trail.map_link, :alt => "icon") %><h4>Chi Ma Wan</h4>
+      </div></a>
+
+      <a href=""><div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <%= image_tag(Trail.map_link, :alt => "icon") %><h4>Lo Fu Tau</h4>
+      </div></a>
+
+      <a href=""><div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <%= image_tag(Trail.map_link, :alt => "icon") %><h4>Wong Lung Hang</h4>
+      </div></a>
+
+    </div>
+  </div>
+</div>
+
+
+
+
