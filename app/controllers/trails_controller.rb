@@ -3,7 +3,7 @@ before_action :authenticate_current_user!, except: [:index, :show]
 
   def index
     @region = params[:region]
-    @trails = Trail.where(region_params) # => {region: "Island"}
+    @trails = Trail.where(region: @region) # => {region: "Island"}
   end
 
   def new
