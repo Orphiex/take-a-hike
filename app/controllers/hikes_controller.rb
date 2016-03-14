@@ -10,7 +10,10 @@ class HikesController < ApplicationController
   end
 
   def create
-    Hike.create(hike_params)
+    hike = Hike.new(hike_params)
+    hiker = @current_user
+    hiker.hikes << hike
+    hiker.save
 
     redirect_to main_path
   end
