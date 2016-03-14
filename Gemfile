@@ -27,12 +27,12 @@ gem 'bower'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-  gem 'pry-rails'
-  gem 'devise_token_auth'
-  gem 'omniauth'
+gem 'pry-rails'
+gem 'devise_token_auth'
+gem 'omniauth'
 
-  gem 'aws-sdk-v1'
-  gem 'aws-sdk', '~> 2'
+gem 'aws-sdk-v1'
+gem 'aws-sdk', '~> 2'
 
 
 
@@ -46,6 +46,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'dotenv-rails'
+  gem 'binding_of_caller'
 end
 
 group :development do
