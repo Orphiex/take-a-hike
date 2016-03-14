@@ -3,12 +3,16 @@ Rails.application.routes.draw do
 
   root 'static_pages#index'
 
+  get 'main', to: 'static_pages#index'
+
   get '/signin', to: 'static_pages#signin'
   get '/signup', to: 'static_pages#signup'
 
   get '/regions', to: 'trails#regions'
 
   get '/trails', to: 'trails#index'
+
+  resources :hikes, only: [:new, :create, :update]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
