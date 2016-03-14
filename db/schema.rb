@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160313063505) do
+ActiveRecord::Schema.define(version: 20160313074414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,14 +78,21 @@ ActiveRecord::Schema.define(version: 20160313063505) do
     t.string   "trail_name"
     t.string   "region"
     t.text     "descriptions"
-    t.string   "point_1"
-    t.text     "start_1"
-    t.string   "point_2"
-    t.text     "start_2"
+    t.string   "pt1_name"
+    t.text     "pt1_info"
+    t.string   "pt2_name"
+    t.text     "pt2_info"
     t.float    "max_height"
     t.float    "difficulty"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.text     "pt1_transp"
+    t.text     "pt2_transp"
+    t.string   "pt1_photo"
+    t.string   "pt2_photo"
+    t.string   "map_link"
+    t.float    "distance"
+    t.float    "est_time"
   end
 
 end
