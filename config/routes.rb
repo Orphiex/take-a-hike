@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get '/trails', to: 'trails#index'
 
+  get '/trails/:id', to: 'trails#details'
+
   resources :hikes, only: [:new, :create, :update]
 
   # The priority is based upon order of creation: first created -> highest priority.
