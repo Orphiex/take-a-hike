@@ -11,8 +11,11 @@ Rails.application.routes.draw do
   get '/regions', to: 'trails#regions'
 
   # get '/trails', to: 'trails#index'
-  resources :trails, only: [:index, :show]
+  resources :trails, only: [:index]
+  get '/trails/:id', to: 'trails#details'
+
   resources :hikers, only: [:index, :show]
+
   resources :hikes, only: [:new, :create, :update]
 
   # The priority is based upon order of creation: first created -> highest priority.

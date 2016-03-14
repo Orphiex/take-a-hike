@@ -3,16 +3,21 @@ before_action :authenticate_current_user!, except: [:index, :show]
 
   def index
     @region = params[:region]
-    @trails = Trail.where(region_params) # => {region: "Island"}
+    @trails = Trail.where(region: @region) # => {region: "Island"}
   end
 
-  def show
-    @trail = Trail.find_by(params[:trail_name])
-
-    if @trail.nil?
-      render json: { message: "Cannot find trail" }, status: :not_found
-    end
+  def details
+    # @id = params[:id]
+    @trail = Trail.find_by_id(params[:id])
   end
+
+  # def show
+  #   @trail = Trail.find_by(params[:trail_name])
+
+  #   if @trail.nil?
+  #     render json: { message: "Cannot find trail" }, status: :not_found
+  #   end
+  # end
 
   def regions
   end
@@ -22,9 +27,6 @@ before_action :authenticate_current_user!, except: [:index, :show]
 
     if @trail.nil?
     end
-  end
-
-  def trails_by_region
   end
 
   private

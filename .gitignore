@@ -18,3 +18,5 @@ bower_components
 .env
 
 .DS_store
+
+/app/assets/stylesheets/backup.css

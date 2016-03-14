@@ -1,26 +1,32 @@
-
-<div class="container-fluid">
-  <div class="jumbotron">
-      <h1><%= @region %> Trail Details</h1>
-      <p>All the trails in this region</p>
+<div id="trails-index">
+  <div class="container-fluid">
+    <div class="jumbotron">
+        <h1><%= @region %> Trail Details</h1>
+        <p>All <%=@region%> trails</p>
+    </div>
   </div>
-</div>
 
-<div id="trails">
-  <div class="well">
-    <h1>Which trail would you like to hike?</h1>
-    <div id="trail-links">
+  <div id="trails">
+    <div class="well">
+      <h1>Which trail would you like to hike?</h1>
+    </div>
+
+    <div class="trail-links">
       <% @trails.each do |trail| %>
-        <a href="/trails/<%= trail.trail_name %>">
-          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-            <%= image_tag(trail.map_link, :alt => "icon") %><h4><%= trail.trail_name %></h4>
+        <a href="/trails/<%= trail.id %>">
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 item-wrapper">
+            <div class="col-xs-6 map-image-div">
+              <%= image_tag(trail.map_link, :alt => "icon") %>
+              <h4><%= trail.trail_name %></h4>
+            </div>
+            <div class="col-xs-6 map-info-div">
+              <h4>Difficulty (Max=4): <%= trail.difficulty %></br></br>
+              Distance (Km): <%= trail.distance %></br></br>
+              Est. Time (Hrs): <%= trail.est_time %></h4>
+            </div>
           </div>
         </a>
       <% end %>
     </div>
   </div>
 </div>
-
-
-
-
