@@ -6,23 +6,20 @@ class HikesController < ApplicationController
   end
 
   def new
+    @hike = Hike.new
   end
 
   def create
-    @hike = current_user.hikes.new(post_params)
+    Hike.create(hike_params)
 
-    if @hike.save
-      # render success in jbuilder
-    else
-      render json: { message: "400 Bad Request" }, status: :bad_request
-    end
+    redirect_to main_path
   end
 
   def show
     @hike = Hike.find_by_id(params[:id])
 
     if @hike.nil?
-      render json: { message: "Cannot find post" }, status: :not_found
+      render json: { message: "Cannot find hike" }, status: :not_found
     end
   end
 
@@ -33,19 +30,19 @@ class HikesController < ApplicationController
     @hike = Hike.find_by_id(params[:id])
 
     if @hike.nil?
-      render json: { message: "Cannot find post" }, status: :not_found
+      render json: { message: "Cannot find hike" }, status: :not_found
     else
-      @hike.update(post_params)
+      @hike.update(hike_params)
     end
   end
 
   def destroy
-    @post = Post.find_by_id(params[:id])
+    @hike = hike.find_by_id(params[:id])
 
-    if @post.nil?
-      render json: { message: "Cannot find post" }, status: :not_found
+    if @hike.nil?
+      render json: { message: "Cannot find hike" }, status: :not_found
     else
-      if @post.destroy
+      if @hike.destroy
         render json: { message: "Successfully deleted" }, status: :no_content
       else
         render json: { message: "Unsuccessfully deleted" }, status: :bad_request
@@ -55,8 +52,8 @@ class HikesController < ApplicationController
 
   private
 
-  def post_params
-    params.require(:hike).permit()
+  def hike_params
+    params.require(:hike).permit(:hike_name, :date, :start_time, :meet_instructions, :start_point, :end_point, :hike_distance, :hike_time)
   end
 
 end
