@@ -1,15 +1,4 @@
 class TrailsController < ApplicationController
-<<<<<<< 0dcbedb720da4ac94f225645c93d6d467cb22f88
-  def regions
-  end
-
-  def show_region_trails
-    @trail = Trail.find_by_id(params[:region])
-
-    if @trail.nil?
-    end
-  end
-=======
 before_action :authenticate_current_user!, except: [:index, :show]
 
   def index
@@ -40,13 +29,20 @@ before_action :authenticate_current_user!, except: [:index, :show]
     end
   end
 
+  def regions
+  end
+
+  def show_region_trails
+    @trail = Trail.find_by_id(params[:region])
+
+    if @trail.nil?
+    end
+  end
 
   private
 
   def post_params
     params.require(:trail).permit()
   end
-
->>>>>>> trails controller done
 end
 
