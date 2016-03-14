@@ -6,6 +6,11 @@ before_action :authenticate_current_user!, except: [:index, :show]
     @trails = Trail.where(region: @region) # => {region: "Island"}
   end
 
+  def details
+    @id = params[:id]
+    @trail = Trail.find(id: @id)
+  end
+
   def new
   end
 
