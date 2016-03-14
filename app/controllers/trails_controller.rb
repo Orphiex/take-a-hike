@@ -2,7 +2,8 @@ class TrailsController < ApplicationController
 before_action :authenticate_current_user!, except: [:index, :show]
 
   def index
-    @trails = Trail.all
+    @region = params[:region]
+    @trails = Trail.where(region_params) # => {region: "Island"}
   end
 
   def new
@@ -12,7 +13,7 @@ before_action :authenticate_current_user!, except: [:index, :show]
     @trail = Trail.find_by_id(params[:id])
 
     if @trail.nil?
-      render json: { message: "Cannot find post" }, status: :not_found
+      render json: { message: "Cannot find trail" }, status: :not_found
     end
   end
 
@@ -23,9 +24,9 @@ before_action :authenticate_current_user!, except: [:index, :show]
     @trail = Trail.find_by_id(params[:id])
 
     if @trail.nil?
-      render json: { message: "Cannot find post" }, status: :not_found
+      render json: { message: "Cannot find trail" }, status: :not_found
     else
-      @trail.update(post_params)
+      @trail.update(trail_params)
     end
   end
 
@@ -39,11 +40,17 @@ before_action :authenticate_current_user!, except: [:index, :show]
     end
   end
 
+  def trails_by_region
+  end
 
   private
 
-  def post_params
-    params.require(:trail).permit()
+  def region_params
+    params.permit(:region) # => {region: "Island"}
+  end
+
+  def trail_params
+    params.require(:trail).permit(:denis) # => {denis: "asdfasd"}
   end
 
 end

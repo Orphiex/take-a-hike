@@ -1,0 +1,27 @@
+
+<div class="container-fluid">
+  <div class="jumbotron">
+      <h1><%= @region %> Trail Details</h1>
+      <p>All the trails in this region</p>
+  </div>
+</div>
+
+<div id="trails">
+  <div class="well">
+    <h1>Which trail would you like to hike?</h1>
+    <div id="trail-links">
+      <% @trails.each do |trail| %>
+        <a href="/trails/<%= trail.id %>">
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <%= image_tag(trail.map_link, :alt => "icon") %><h4><%= trail.trail_name %></h4>
+          </div>
+        </a>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+
+
+
