@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :trails, only: [:index]
   get '/trails/:id', to: 'trails#details'
 
-  resources :hikers, only: [:index, :show]
+  resources :hikers, only: [:index, :show, :edit, :update]
 
   resources :hikes, only: [:new, :create, :update]
 
