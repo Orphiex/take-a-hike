@@ -1,14 +1,8 @@
 <div id="trails-index">
-  <div class="container-fluid">
-    <div class="jumbotron">
-        <h1><%= @region %> Trail Details</h1>
-        <p>All <%=@region%> trails</p>
-    </div>
-  </div>
 
   <div id="trails">
     <div class="well">
-      <h1>Which trail would you like to hike?</h1>
+      <h1>Which <%= @region %> trail would you like to hike?</h1>
     </div>
 
     <div class="trail-links">
@@ -20,11 +14,12 @@
               <h4><%= trail.trail_name %></h4>
             </div>
             <div class="col-xs-6 map-info-div">
-              <h4>Difficulty (Max = 4): <%= trail.difficulty %></br>
-              Length (Max = 4): <%= trail.d_length %></br>
-              Time (Max = 4): <%= trail.d_time %></br>
-              Gradient (Max = 4): <%= trail.d_gradient %></br>
-              Surface (Max = 4): <%= trail.d_surface %></br></br>
+              <h4>Ratings (Max = 4):</br>
+              Difficulty:  <%= trail.difficulty %></br>
+              Length:  <%= trail.d_length %></br>
+              Time:  <%= trail.d_time %></br>
+              Gradient:  <%= trail.d_gradient %></br>
+              Surface:  <%= trail.d_surface %></br></br>
               Distance (Km): <%= trail.distance %></br>
               Est. Time (Hrs): <%= trail.est_time %></h4>
             </div>

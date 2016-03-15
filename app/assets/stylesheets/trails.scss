@@ -2,18 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#trails-index {
-  .container-fluid {
-    .jumbotron {
-      background-color: lightgreen;
-    }
-  }
+#regions {
+  h4 {
+        font-size: 25px;
+        color: black;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 200px;
+      }
+}
+
+#trails {
 
   .trail-links > a > div.item-wrapper {
     max-height: 300px;
     border: 2px solid black;
     border-radius: 5px;
     padding: 20px 25px 0px 25px;
+    color: black;
     object-fit: cover;
 
     div.map-image-div {
@@ -22,6 +29,8 @@
       }
 
       h4 {
+        font-size: 25px;
+        color: black;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -42,6 +51,7 @@
     border: 3px grey;
     border-radius: 5px;
     padding: 5px 5px 0px 5px;
+
     object-fit: cover;
 
     div.trail-image-div {
