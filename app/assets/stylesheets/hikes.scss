@@ -1,3 +1,45 @@
 // Place all the styles related to the Hikes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#create_a_hike {
+  font-size: 25px;
+
+}
+
+#meet_instructions {
+  width: 60%
+
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+
+input[type="text"] {
+  display: in-line;
+  margin: 0;
+  width: 30%;
+  font-size: 20px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 3px;
+  padding: 5px;
+
+}
+
+label {
+  font-size: 25px;
+  padding: 5px;
+}
+
+button {
+  width: 100px;
+  margin: 5px;
+}
+
+body {
+  font-family: 'Caveat Brush', cursive; font-weight: 500; font-size: 20px;
+}
