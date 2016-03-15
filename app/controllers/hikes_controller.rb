@@ -24,9 +24,13 @@ class HikesController < ApplicationController
 
   def show
     @hike = Hike.find_by_id(params[:id])
-
     if @hike.nil?
       render json: { message: "Cannot find hike" }, status: :not_found
+    else
+      respond_to do |format|
+        format.html
+        format.json { render json: @hike, include: [:trails] }
+      end
     end
   end
 
