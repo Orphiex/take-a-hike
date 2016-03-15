@@ -6,7 +6,6 @@ $(document).ready(function(){
   var createNewOption = function(elem, index){
     var name = elem.trail_name;
     // var id = elem.id;
-    console.log(name);
     var newLi = '' + '<option value="' + name + '">' + name + '</option>';
 
     $("#trails_list").append(newLi);
@@ -24,6 +23,35 @@ $(document).ready(function(){
       url: '/trails_by_region',
       success: function(resp){
         bindTrails(resp);
+      },
+      error: function(resp){
+        console.log(resp);
+      }
+    });
+  });
+
+  $("#create_a_hike").on("submit", function(e){
+    e.preventDefault();
+
+    var postData = {
+      hike_name:          $("#hike_name").val(),
+      trails_list:        $("#trails_list").val(),
+      date:               $("#date").val(),
+      start_time:         $("#start_time").val(),
+      meet_instructions:  $("#meet_instructions").val(),
+      start_point:        $("#start_point").val(),
+      end_point:          $("#end_point").val(),
+      hike_distance:      $("#hike_distance").val(),
+      hike_time:          $("#hike_time").val()
+    };
+
+    $.ajax({
+      method: 'POST',
+      url: "/hikes",
+      data: postData,
+      success: function(resp){
+        console.log(resp);
+        window.location.href = '/';
       },
       error: function(resp){
         console.log(resp);
