@@ -29,6 +29,11 @@ before_action :authenticate_current_user!, except: [:index, :show]
     end
   end
 
+  def group_by_regions
+    @trails = Trail.all.group_by{|t| t.region}
+    render json: @trails
+  end
+
   private
 
   def region_params

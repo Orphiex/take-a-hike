@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get '/regions', to: 'trails#regions'
 
+  get '/trails_by_region', to: 'trails#group_by_regions'
+
   # get '/trails', to: 'trails#index'
   resources :trails, only: [:index]
   get '/trails/:id', to: 'trails#details'

@@ -7,6 +7,7 @@ class HikesController < ApplicationController
 
   def new
     @hike = Hike.new
+    # render json: @trails
   end
 
   def create
