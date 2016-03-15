@@ -13,7 +13,7 @@ $(document).ready(function(){
       password_confirmation: $('#signup-form input[name="password_confirmation"]').val()
     }).then(function(user){
       console.log(user);
-      window.location.href = '/';
+      window.location.href = '/hikers/' + user.data.id + '/edit';
     }).fail(function(resp){
       console.log(resp);
     });

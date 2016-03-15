@@ -1,6 +1,10 @@
 <div id="hikers">
   <div class="well">
-    <h1><%= @hiker.name %></h1>
+    <h2><%= @hiker.name %></h2>
+    <h4><%= @hiker.nickname %></h4>
+    <% if @current_user %>
+      <button id="edit_user_details" class="btn btn-lg btn-primary">Edit User Details</button>
+    <% end %>
   </div>
 
   <div class="well">

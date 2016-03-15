@@ -24,7 +24,7 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <ul class="nav navbar-nav navbar-right">
       <% if @current_user %>
-        <button id="hiker_page" class="btn btn-lg btn-info">Hiker Page</button>
+        <button id="hiker_page" class="btn btn-lg btn-info">Welcome, <%= @current_user.nickname %></button>
         <button id="logout-button" class="btn btn-lg btn-danger">Sign Out</button>
       <% else %>
         <a href="/signup" class="btn btn-lg btn-warning">Sign Up</a>

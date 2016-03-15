@@ -13,9 +13,23 @@ class HikersController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    @hiker = Hiker.update(params[:id], hiker_params)
+
+    # if @hiker.nil?
+    #   render json: { message: "Cannot find hiker" }, status: :not_found
+    # else
+    #   Hiker.update(@hikerhiker_params)
+    # end
+    head :ok, content_type: "text/html"
+  end
+
   private
 
   def hiker_params
-    params.require(:hiker).permit(:name, :email)
+    params.permit(:name, :nickname, :image)
   end
 end
