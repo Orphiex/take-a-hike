@@ -13,7 +13,9 @@ class HikesController < ApplicationController
   def create
     hike = Hike.new(hike_params)
     hiker = @current_user
+    trail = Trail.where(:trail_name => params[])
     hiker.hikes << hike
+    trail.hikes << hike
     hiker.save
 
     redirect_to main_path
@@ -60,7 +62,7 @@ class HikesController < ApplicationController
   private
 
   def hike_params
-    params.require(:hike).permit(:hike_name, :date, :start_time, :meet_instructions, :start_point, :end_point, :hike_distance, :hike_time)
+    params.require(:hike).permit(:hike_name, :trails_list, :date, :start_time, :meet_instructions, :start_point, :end_point, :hike_distance, :hike_time)
   end
 
 end
