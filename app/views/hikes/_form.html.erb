@@ -1,53 +1,59 @@
-<%= form_for @hike do |f| %>
-  <% if @hike.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@hike.errors.count, "error") %> prohibited this hike from being saved:</h2>
-
-      <ul>
-      <% @hike.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<form id="create_a_hike">
   <div class="field">
-    <%= f.label :hike_name %> <br>
-    <%= f.text_field :hike_name %>
+    <label for="hike_name">Hike Name</label> <br>
+    <input type="text" id="hike_name" />
+  </div><br>
+  <div class="field">
+    <label for="trails_list">Trail</label><br>
+    <select id="regions_list">
+      <option selected value="base">Please Select</option>
+      <option value="Hong Kong Island">Hong Kong Island</option>
+      <option value="Kowloon">Kowloon</option>
+      <option value="Central New Territories">Central New Territories</option>
+      <option value="Sai Kung">Sai Kung Country Park</option>
+      <option value="Lamma Island">Lamma Island</option>
+      <option value="Lantau Island">Lantau Island</option>
+      <option value="Cheung Chau Island">Cheung Chau Island</option>
+      <option value="Peng Chau Island">Peng Chau Island</option>
+    </select>
+    <br><br>
+    <select id="trails_list">
+      <option>Please choose from above</option>
+    </select><br><br>
   </div>
   <div>
     <div class="field">
-      <%= f.label :date %> <br>
-      <%= f.text_field :date, :placeholder => "yyyy/mm/dd" %>
+      <label for="date">Date</label><br>
+      <input type="date" id="date" placeholder="yyyy/mm/dd" />
     </div>
     <div class="field">
-      <%= f.label :start_time %> <br>
-      <%= f.text_field :start_time %>
+      <label for="start_time">Start Time</label><br>
+      <input type="text" id="start_time" />
     </div>
     <div class="field">
-      <%= f.label :meet_instructions %> <br>
-      <%= f.text_area :meet_instructions, :placeholder => "Where will your group meet?" %>
+      <label for="meet_instructions">Meeting Instructions</label><br>
+      <textarea id="meet_instructions" placeholder="Where will your group meet?"></textarea>
     </div>
   </div>
   <div>
     <div class="field">
-      <%= f.label :start_point %> <br>
-      <%= f.text_field :start_point, :placeholder => "Placeholder" %>
+      <label for="start_point">Start Point</label><br>
+      <input type="text" id="start_point" placeholder="Placeholder" />
     </div>
     <div class="field">
-      <%= f.label :end_point %> <br>
-      <%= f.text_field :end_point, :placeholder => "Placeholder" %>
+      <label for="end_point">End Point</label><br>
+      <input type="text" id="end_point" placeholder="Placeholder" />
     </div>
     <div class="field">
-      <%= f.label :hike_distance %> <br>
-      <%= f.text_field :hike_distance, :placeholder => "0" %> <%= f.label " km" %>
+      <label for="hike_distance">Hike Distance</label><br>
+      <input type="text" id="hike_distance" placeholder="0" /> <label>km</label>
     </div>
     <div class="field">
-      <%= f.label :hike_time %> <br>
-      <%= f.text_field :hike_time, :placeholder => "0" %> <%= f.label " hrs" %>
+      <label for="hike_time">Estimated Time</label><br>
+      <input type="text" id="hike_time" placeholder="0" /> <label>hrs</label>
     </div>
   </div> <br>
   <div class="actions">
-    <%= f.submit %>
+    <input type="submit" class="btn btn-info" value="Create Hike">
   </div>
-<% end %>
+</form>

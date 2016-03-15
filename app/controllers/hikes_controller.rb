@@ -7,12 +7,16 @@ class HikesController < ApplicationController
 
   def new
     @hike = Hike.new
+    # render json: @trails
   end
 
   def create
     hike = Hike.new(hike_params)
     hiker = @current_user
+    trail = Trail.where(:trail_name => params[:trails_list])
+    # where name IN (for many)
     hiker.hikes << hike
+    hike.trails << trail
     hiker.save
 
     redirect_to main_path
@@ -27,6 +31,9 @@ class HikesController < ApplicationController
   end
 
   def edit
+  end
+
+  def region_trails
   end
 
   def update
@@ -56,7 +63,7 @@ class HikesController < ApplicationController
   private
 
   def hike_params
-    params.require(:hike).permit(:hike_name, :date, :start_time, :meet_instructions, :start_point, :end_point, :hike_distance, :hike_time)
+    params.permit(:hike_name, :date, :start_time, :meet_instructions, :start_point, :end_point, :hike_distance, :hike_time)
   end
 
 end
