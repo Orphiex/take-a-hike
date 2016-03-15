@@ -7,9 +7,21 @@ class HikersController < ApplicationController
 
   def show
     @hiker = Hiker.find_by_id(params[:id])
-
     if @hiker.nil?
       render json: { message: "Cannot find hiker" }, status: :not_found
+    else
+      respond_to do |format|
+        format.html
+        format.json { render json: @hiker, include: [:groups, :hikes] }
+
+        # {
+        #   name: ,
+        #   image:
+        #   groups: [{},{},{}]
+        #   hikes: [{},{}]
+        # }
+
+      end
     end
   end
 
@@ -24,6 +36,7 @@ class HikersController < ApplicationController
     # else
     #   Hiker.update(@hikerhiker_params)
     # end
+
     head :ok, content_type: "text/html"
   end
 
