@@ -1,13 +1,30 @@
 <div id="hikers">
   <div class="well">
     <h2><%= @hiker.name %></h2>
-    <h4><%= @hiker.nickname %></h4>
+    <h3><%= @hiker.nickname %></h3>
     <% if @current_user %>
       <button id="edit_user_details" class="btn btn-lg btn-primary">Edit User Details</button>
     <% end %>
   </div>
 
+  <div class="well" id="user_details">
+    <h3>Details</h3>
+  </div>
+
+  <div class="well" id="user_records">
+    <h3>Personal Records</h3>
+  </div>
+
   <div class="well">
-    <h4>Details</h4><br>
+    <h3><%= @hiker.name %>'s Hikes</h3>
+    <div id="all_hikes">
+      <h4>All Hikes</h4>
+    </div>
+    <div id="upcoming_hikes">
+      <h4>Upcoming Hikes</h4>
+    </div>
+    <div id="complete_hikes">
+      <h4>Past Hikes</h4>
+    </div>
   </div>
 </div>

@@ -36,13 +36,14 @@ $(document).ready(function(){
     var postData = {
       hike_name:          $("#hike_name").val(),
       trails_list:        $("#trails_list").val(),
+      hike_distance:      $("#hike_distance").val(),
+      hike_time:          $("#hike_time").val(),
       date:               $("#date").val(),
       start_time:         $("#start_time").val(),
-      meet_instructions:  $("#meet_instructions").val(),
       start_point:        $("#start_point").val(),
       end_point:          $("#end_point").val(),
-      hike_distance:      $("#hike_distance").val(),
-      hike_time:          $("#hike_time").val()
+      completed:          $("#completed").val(),
+      meet_instructions:  $("#meet_instructions").val()
     };
 
     $.ajax({
