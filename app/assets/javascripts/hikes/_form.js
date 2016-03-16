@@ -42,9 +42,10 @@ $(document).ready(function(){
       start_time:         $("#start_time").val(),
       start_point:        $("#start_point").val(),
       end_point:          $("#end_point").val(),
-      completed:          $("#completed").val(),
+      completed:          $("#completed").is(':checked'),
       meet_instructions:  $("#meet_instructions").val()
     };
+    console.log(postData);
 
     $.ajax({
       method: 'POST',
@@ -52,7 +53,7 @@ $(document).ready(function(){
       data: postData,
       success: function(resp){
         console.log(resp);
-        window.location.href = '/';
+        window.location.href = '/hikes/' + resp.id;
       },
       error: function(resp){
         console.log(resp);
