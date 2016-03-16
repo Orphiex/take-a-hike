@@ -1,9 +1,5 @@
 $(document).ready(function(){
 
-  $.auth.configure({
-    apiUrl: 'http://localhost:3000'
-  });
-
   $('#hiker_page').on('click', function(e){
     e.preventDefault();
 
