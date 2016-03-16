@@ -17,9 +17,9 @@ class HikesController < ApplicationController
     # where name IN (for many)
     hiker.hikes << hike
     hike.trails << trail
-    hiker.save
+    hike.save
 
-    redirect_to main_path
+    render json: hike
   end
 
   def show
@@ -67,7 +67,7 @@ class HikesController < ApplicationController
   private
 
   def hike_params
-    params.permit(:hike_name, :date, :start_time, :meet_instructions, :start_point, :end_point, :hike_distance, :hike_time)
+    params.permit(:hike_name, :date, :start_time, :meet_instructions, :start_point, :end_point, :hike_distance, :hike_time, :completed)
   end
 
 end
