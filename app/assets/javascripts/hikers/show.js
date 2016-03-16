@@ -27,7 +27,7 @@ $(document).ready(function(){
       check = "No";
     }
 
-    var hikeLi = '<tr><td>' + id + '</td><td>' + date + '</td><td>' + name + '</td><td>' + check + '</td></tr>';
+    var hikeLi = '<tr><td>' + id + '</td><td>' + date + '</td><td>' + name + '</td><td>' + check + '</td><td><a href="/hikes/' + id + '" class="btn btn-success">View ' + name + '</a></td></tr>';
 
     $('#all_hikes_table tr:last').after(hikeLi);
   };
