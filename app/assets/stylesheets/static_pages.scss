@@ -18,3 +18,14 @@
   max-height: 40px;
 }
 */
+
+#signin-form, #signup-form {
+  display: in-line;
+  max-width: 1000px;
+  font-size: 25px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 3px;
+  padding: 5px;
+
+}
