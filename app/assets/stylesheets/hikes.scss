@@ -4,8 +4,21 @@
 
 #create_a_hike, #hike_details {
   font-size: 25px;
+  margin-left: 25px;
 
 }
+
+#regions_list, #trails_list {
+  color: red;
+}
+
+select option, select option {
+  font-family: 'Caveat Brush', cursive;
+  font-weight: 500;
+  font-size: 20px;
+  color: blue;
+}
+
 
 #meet_instructions {
   width: 60%
