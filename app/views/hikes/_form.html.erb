@@ -1,0 +1,53 @@
+<form id="create_a_hike">
+
+  <div class="field">
+    <label for="hike_name"  >Event Name</label>
+    <input type="text" placeholder="eg, Lantau Peak or Bust" id="hike_name" />
+  </div>
+
+  <div class="field">
+    <label for="trails_list">Trail Details</label>
+    <select id="regions_list">
+      <option selected value="base">Please Select Region</option>
+      <option value="Hong Kong Island">Hong Kong Island</option>
+      <option value="Kowloon">Kowloon</option>
+      <option value="Central New Territories">Central New Territories</option>
+      <option value="Sai Kung">Sai Kung Country Park</option>
+      <option value="Lamma Island">Lamma Island</option>
+      <option value="Lantau Island">Lantau Island</option>
+      <option value="Cheung Chau Island">Cheung Chau Island</option>
+      <option value="Peng Chau Island">Peng Chau Island</option>
+    </select>
+    <select id="trails_list">
+      <option>Please choose trail</option>
+    </select><br>
+  </div>
+  <div class="field">
+    <label for="hike_distance">Hike Distance (Km)</label>
+    <input type="text" id="hike_distance" placeholder="0" />
+    <label for="hike_time">Estimated Time (Hrs)</label>
+    <input type="text" id="hike_time" placeholder="0" />
+    <label for="date">Date</label>
+    <input type="date" id="date" placeholder="yyyy/mm/dd" /></br>
+    <label for="start_time">Start Time</label>
+    <input type="time" id="start_time" />
+  </div>
+  <div>
+    <div class="field">
+      <label for="start_point">Start Point</label>
+      <input type="text" id="start_point" placeholder="Placeholder" />
+      <label for="end_point">End Point</label>
+      <input type="text" id="end_point" placeholder="Placeholder" />
+      <label>Completed?</label>
+      <input id="completed" type="checkbox"></input>
+    </div>
+    <div class="field">
+      <label for="meet_instructions">Other Meeting Instructions</label></br>
+      <textarea id="meet_instructions" placeholder="Provide specific instructions for meeting up, stuff to bring and other particulars..."></textarea>
+    </div>
+    <div class="actions">
+      <input id="create" type="submit" class="btn btn-info" value="Create Hike">
+    </div>
+  </div>
+
+</form>

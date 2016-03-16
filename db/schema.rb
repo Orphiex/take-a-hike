@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160310063659) do
+ActiveRecord::Schema.define(version: 20160315141034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "groups", force: :cascade do |t|
+    t.integer  "hiker_id"
+    t.integer  "hike_id"
+    t.string   "group_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "groups", ["hike_id"], name: "index_groups_on_hike_id", using: :btree
+  add_index "groups", ["hiker_id"], name: "index_groups_on_hiker_id", using: :btree
 
   create_table "hikers", force: :cascade do |t|
     t.string   "provider",               default: "email", null: false
@@ -40,5 +51,53 @@ ActiveRecord::Schema.define(version: 20160310063659) do
   add_index "hikers", ["email"], name: "index_hikers_on_email", using: :btree
   add_index "hikers", ["reset_password_token"], name: "index_hikers_on_reset_password_token", unique: true, using: :btree
   add_index "hikers", ["uid", "provider"], name: "index_hikers_on_uid_and_provider", unique: true, using: :btree
+
+  create_table "hikes", force: :cascade do |t|
+    t.string   "hike_name"
+    t.date     "date"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.text     "meet_instructions"
+    t.string   "start_point"
+    t.string   "end_point"
+    t.float    "hike_distance"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.boolean  "completed"
+    t.float    "hike_time"
+  end
+
+  create_table "hikes_trails", force: :cascade do |t|
+    t.integer "hike_id"
+    t.integer "trail_id"
+  end
+
+  add_index "hikes_trails", ["hike_id"], name: "index_hikes_trails_on_hike_id", using: :btree
+  add_index "hikes_trails", ["trail_id"], name: "index_hikes_trails_on_trail_id", using: :btree
+
+  create_table "trails", force: :cascade do |t|
+    t.string   "trail_name"
+    t.string   "region"
+    t.text     "descriptions"
+    t.string   "pt1_name"
+    t.text     "pt1_info"
+    t.string   "pt2_name"
+    t.text     "pt2_info"
+    t.float    "max_height"
+    t.integer  "difficulty"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.text     "pt1_transp"
+    t.text     "pt2_transp"
+    t.string   "pt1_photo"
+    t.string   "pt2_photo"
+    t.string   "map_link"
+    t.float    "distance"
+    t.float    "est_time"
+    t.integer  "d_length"
+    t.integer  "d_time"
+    t.integer  "d_gradient"
+    t.integer  "d_surface"
+  end
 
 end

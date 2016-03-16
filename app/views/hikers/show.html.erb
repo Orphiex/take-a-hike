@@ -1,0 +1,45 @@
+<div class="container" id="hikers">
+
+  <div class="well" id="user_records">
+    <h2><%= @hiker.name %> aka: <%= @hiker.nickname %></h2>
+    <% if @current_user %>
+      <button id="edit_user_details" class="btn btn-lg btn-primary">Edit Details</button>
+    <% end %>
+    <h3><%= @hiker.nickname %>'s Hikes</h3>
+    <div id="all_hikes">
+      <h4>All Hikes</h4>
+      <table id="all_hikes_table" class="table">
+        <tr>
+          <th>Date</th>
+          <th>Hike Name</th>
+          <th>Done?</th>
+          <th>Distance</th>
+          <th>Time</th>
+          <th>View</th>
+        </tr>
+      </table>
+    </div>
+    <!-- <div id="upcoming_hikes">
+      <h4>Upcoming Hikes</h4>
+      <table id="upcoming_hikes_table" class="table-striped">
+        <tr>
+          <th>Hike ID</th>
+          <th>Date</th>
+          <th>Hike Name</th>
+          <th>Completed?</th>
+        </tr>
+      </table>
+    </div>
+    <div id="complete_hikes">
+      <h4>Past Hikes</h4>
+      <table id="complete_hikes_table" class="table-striped">
+        <tr>
+          <th>Hike ID</th>
+          <th>Date</th>
+          <th>Hike Name</th>
+          <th>Completed?</th>
+        </tr>
+      </table>
+    </div> -->
+  </div>
+</div>

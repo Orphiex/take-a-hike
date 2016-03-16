@@ -1,0 +1,35 @@
+/* .layer {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.layer1 {
+  z-index: 10;
+}
+
+.layer2 {
+  z-index: 20;
+  max-height: 150px;
+}
+
+.layer3{
+  z-index: 30;
+  max-height: 40px;
+}
+*/
+
+
+
+
+#signin-form, #signup-form {
+  display: in-line;
+  margin-left: 25px;
+  max-width: 1000px;
+  font-size: 25px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 3px;
+  padding: 5px;
+
+}

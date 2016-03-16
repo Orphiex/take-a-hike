@@ -4,4 +4,7 @@ class Hiker < ActiveRecord::Base
           :recoverable, :rememberable, :trackable, :validatable,
           :omniauthable
   include DeviseTokenAuth::Concerns::User
+
+  has_many :groups
+  has_many :hikes, through: :groups
 end

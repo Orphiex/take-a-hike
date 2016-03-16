@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
   $.auth.configure({
-    apiUrl: 'http://localhost:3000'
+    apiUrl: 'https://wdi-take-a-hike.herokuapp.com'
   });
 
   $("#signup-form").on("submit", function(e){
@@ -13,7 +13,7 @@ $(document).ready(function(){
       password_confirmation: $('#signup-form input[name="password_confirmation"]').val()
     }).then(function(user){
       console.log(user);
-      alert("Welcome "+ user.name + "!");
+      window.location.href = '/hikers/' + user.data.id + '/edit';
     }).fail(function(resp){
       console.log(resp);
     });
@@ -27,9 +27,13 @@ $(document).ready(function(){
       password: $('#signin-form input[name="password"]').val(),
     }).then(function(user){
       console.log(user);
-      alert('Welcome ' + user.name + '!');
+      window.location.href = '/';
     }).fail(function(resp){
       console.log(resp);
     });
+  });
+
+  $('#logout-button').on('click', function(){
+    $.auth.signOut();
   });
 });

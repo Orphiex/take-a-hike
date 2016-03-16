@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  trail_name: MyString
+  region: MyString
+
+two:
+  trail_name: MyString
+  region: MyString

@@ -10,6 +10,27 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require bootstrap/dist/css/bootstrap
  *= require_tree .
  *= require_self
  */
+
+h1 {
+  font-family: 'Caveat Brush', cursive; font-weight: 400; font-size: 60px;
+
+}
+
+.nav {
+  font-size: 30px;
+}
+
+.btn {
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+body {
+  font-family: 'Caveat Brush', cursive; font-weight: 500; font-size: 40px;
+  background-image: image-url("background/home_bkgrd_blurr");
+}
+

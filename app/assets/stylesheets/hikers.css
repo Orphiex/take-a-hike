@@ -1,0 +1,43 @@
+#hikers, #edit_your_profile {
+  font-size: 25px;
+  margin-left: 25px;
+
+}
+
+#meet_instructions {
+  width: 60%
+
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+
+input[type="text"] {
+  display: in-line;
+  margin: 0;
+  width: 30%;
+  font-size: 20px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 3px;
+  padding: 5px;
+
+}
+
+label {
+  font-size: 25px;
+  padding: 5px;
+}
+
+button {
+  font-size: 20px;
+  width: 100px;
+  margin: 5px;
+}
+
+body {
+  font-family: 'Caveat Brush', cursive; font-weight: 500; font-size: 20px;
+}

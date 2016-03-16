@@ -12,15 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
-
 //= require jquery-deparam/jquery-deparam.js
 //= require jquery-cookie/jquery.cookie.js
 //= require pubsub-js/src/pubsub.js
 //= require j-toker/dist/jquery.j-toker.js
-
-$.auth.configure({
-  // By default, you only need to configure apiUrl
-  // Note that if you put a '/' at the end of the link, there will be errors when calling the api
-  apiUrl: 'http://localhost:3000'
-});
+//= require bootstrap/dist/js/bootstrap.js
+//= require_tree .

@@ -1,5 +1,25 @@
 Rails.application.routes.draw do
   mount_devise_token_auth_for 'Hiker', at: 'auth'
+
+  root 'static_pages#index'
+
+  get 'main', to: 'static_pages#index'
+
+  get '/signin', to: 'static_pages#signin'
+  get '/signup', to: 'static_pages#signup'
+
+  get '/regions', to: 'trails#regions'
+
+  get '/trails_by_region', to: 'trails#group_by_regions'
+
+  # get '/trails', to: 'trails#index'
+  resources :trails, only: [:index]
+  get '/trails/:id', to: 'trails#details'
+
+  resources :hikers, only: [:index, :show, :edit, :update]
+
+  resources :hikes, only: [:new, :create, :show, :update]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
