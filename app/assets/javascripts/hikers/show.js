@@ -19,7 +19,7 @@ $(document).ready(function(){
     $('#user_details').append(testL2);
   };
 
-  var appendHikeData = function (id, name, date, completed){
+  var appendHikeData = function (id, name, date, distance, time, completed){
     var check;
     if (completed === true) {
       check = 'Yes';
@@ -27,7 +27,7 @@ $(document).ready(function(){
       check = "No";
     }
 
-    var hikeLi = '<tr><td>' + id + '</td><td>' + date + '</td><td>' + name + '</td><td>' + check + '</td><td><a href="/hikes/' + id + '" class="btn btn-success">View ' + name + '</a></td></tr>';
+    var hikeLi = '<tr><td>' + date + '</td><td>' + name + '</td><td>' + check + '</td><td>' + distance + '</td><td>' + time + '</td><td><a href="/hikes/' + id + '" class="btn btn-success">View Hike Details</a></td></tr>';
 
     $('#all_hikes_table tr:last').after(hikeLi);
   };
@@ -42,7 +42,7 @@ $(document).ready(function(){
         console.log(resp);
         personalData(resp.id, resp.name, resp.nickname);
         resp.hikes.forEach(function(elem, index){
-          appendHikeData(elem.id, elem.hike_name, elem.date, elem.completed);
+          appendHikeData(elem.id, elem.hike_name, elem.date, elem.hike_distance, elem.hike_time, elem.completed);
         });
       },
       error: function(resp){
