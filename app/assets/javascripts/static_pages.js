@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
   $.auth.configure({
-    apiUrl: 'https://wdi-take-a-hike.herokuapp.com'
+    apiUrl: 'http://localhost:3000'
   });
 
   $("#signup-form").on("submit", function(e){

@@ -1,10 +1,11 @@
-<div id="hike_details">
+<div id="hike_details" class="container">
+  <h1>Hike Details for <%=@hike.hike_name%></h1>
   <% if @hike.completed === true %>
     <label>'<%=@hike.hike_name%>' was completed on <%= @hike.date%></label></br>
   <% else %>
     <label>'<%=@hike.hike_name%>' has not been completed</label></br>
   <% end %>
-  <label>Hike Details</label></br>
+
   <label>Region Selected: <%= @hike.trails.first.region %></label></br>
   <label>Trail Selected: <%= @hike.trails.first.trail_name %></label></br>
   <label>Distance Hiked (Km): <%= @hike.hike_distance%></label></br>
