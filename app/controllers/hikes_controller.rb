@@ -29,7 +29,7 @@ class HikesController < ApplicationController
     else
       respond_to do |format|
         format.html
-        format.json { render json: @hike, include: [:trails] }
+        format.json { render json: @hike, include: [:trails, :hikers] }
       end
     end
   end
