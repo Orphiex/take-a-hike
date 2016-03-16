@@ -1,10 +1,8 @@
 <div id="hike_details">
-  <label>Event Name:</label><%=@hike.hike_name%></br>
-  <label>Trail Details</label></br>
-  <label>Region Selected: </label></br>
-  <label>Trail Selected: </label></br>
-  <label>Distance Hiked (Km): </label><%= @hike.hike_distance%></br>
-  <label>Completion Time (Hrs): </label><%= @hike.hike_time%></br>
-  <label>Date: </label><%= @hike.date%>
-
+  <label>'<%=@hike.hike_name%>' was completed on <%= @hike.date%></label></br>
+  <label>Hike Details</label></br>
+  <label>Region Selected: <%= @hike.trails.first.region %></label></br>
+  <label>Trail Selected: <%= @hike.trails.first.trail_name %></label></br>
+  <label>Distance Hiked (Km): <%= @hike.hike_distance%></label></br>
+  <label>Completion Time (Hrs): <%= @hike.hike_time%></label></br>
 </div>
