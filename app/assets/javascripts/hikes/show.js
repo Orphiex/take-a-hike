@@ -24,7 +24,7 @@ $(document).ready(function(){
     });
   };
 
-  if (location.pathname.split('/')[1] == "hikes") {
+  if (location.pathname.split('/')[1] == "hikes" && location.pathname.split('/')[2] !== "new") {
     getHikeData();
   }
 });
