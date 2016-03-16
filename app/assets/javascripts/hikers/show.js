@@ -11,7 +11,7 @@ $(document).ready(function(){
     });
   });
 
-  var assemblePage = function (id, name, nickname){
+  var personalData = function (id, name, nickname){
     var testLi = '<div class="col-xs-12">' + name + '</div>';
     var testL2 = '<div class="col-xs-12">' + nickname + '</div>';
 
@@ -19,7 +19,20 @@ $(document).ready(function(){
     $('#user_details').append(testL2);
   };
 
-  var getJSON = function(){
+  var appendHikeData = function (id, name, date, completed){
+    var check;
+    if (completed === true) {
+      check = 'Yes';
+    } else {
+      check = "No";
+    }
+
+    var hikeLi = '<tr><td>' + id + '</td><td>' + date + '</td><td>' + name + '</td><td>' + check + '</td></tr>';
+
+    $('#all_hikes_table tr:last').after(hikeLi);
+  };
+
+  var getHikerData = function(){
     var user_id = window.location.href.split('/')[4];
     $.ajax({
       method: 'GET',
@@ -27,7 +40,10 @@ $(document).ready(function(){
       dataType: 'JSON',
       success: function(resp, status){
         console.log(resp);
-        assemblePage(resp.id, resp.name, resp.nickname);
+        personalData(resp.id, resp.name, resp.nickname);
+        resp.hikes.forEach(function(elem, index){
+          appendHikeData(elem.id, elem.hike_name, elem.date, elem.completed);
+        });
       },
       error: function(resp){
         console.log(resp);
@@ -35,6 +51,8 @@ $(document).ready(function(){
     });
   };
 
-  getJSON();
+  if (location.pathname.split('/')[1] == "hikers") {
+    getHikerData();
+  }
 
 });
